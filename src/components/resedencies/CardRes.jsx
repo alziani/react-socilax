@@ -1,21 +1,18 @@
-import React from 'react';
-import Card from 'react-bootstrap/Card';
+import React from "react";
+import Card from "react-bootstrap/Card";
+import "./resedencies.css";
 
-function CardRes() {
+function CardRes({ image, price, name, detail }) {
   return (
-    <Card style={{ width: '18rem' }}>
-      <Card.Img variant="top" src="holder.js/100px180" />
+    <Card className="r-card flexColStart">
+      <Card.Img className="image" src={image} />
       <Card.Body>
-        <Card.Title>Card Title</Card.Title>
-        <Card.Text>
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
-        </Card.Text>
-        
+        <Card.Text className="secondaryText r-price">$ {price} </Card.Text>
+        <Card.Title className="primaryText name">{name}</Card.Title>
+        <Card.Text className="secondaryText det">{detail} </Card.Text>
       </Card.Body>
     </Card>
   );
-  
 }
 
-export default CardRes
+export default CardRes;
