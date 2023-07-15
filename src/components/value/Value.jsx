@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import valueImage from "../../images/valueImage.png";
 import "./value.css";
 import valueData from "./valueData";
@@ -15,6 +15,7 @@ import "react-accessible-accordion/dist/fancy-example.css";
 import { MdOutlineArrowDropDown } from "react-icons/md";
 
 function Value() {
+  const [clasName, setClassName] = useState("");
   return (
     <section className="value-wrapper">
       <div className="paddings innerWidth flexCenter value-container ">
@@ -38,9 +39,18 @@ function Value() {
           >
             {valueData.map((item) => {
               return (
-                <AccordionItem key={item.id} className="accordionItem">
+                <AccordionItem
+                  key={item.id}
+                  className={`accordionItem ${clasName} `}
+                >
                   <AccordionItemHeading>
                     <AccordionItemButton className="accordionButton">
+                      <AccordionItemState>
+                        {(expanded) =>
+                          expanded ? setClassName("expanded") : setClassName("")
+                        }
+                      </AccordionItemState>
+
                       <div className="flexCenter icon">{item.icon}</div>
                       <span className="primaryText">{item.heading}</span>
                       <div className="flexCenter icon">

@@ -20,6 +20,10 @@
   overflow: hidden;
   margin-bottom: 20px;
 }
+.accordionItem.expanded {
+  box-shadow: var(--shadow);
+  border-radius: 6px;
+}
 .accordionButton {
   display: flex;
   align-items: center;
