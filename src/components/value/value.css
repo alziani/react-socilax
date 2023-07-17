@@ -44,3 +44,8 @@
 .accordionButton .primaryText {
   font-size: 1rem;
 }
+@media (max-width: 640px) {
+  .value-container {
+    flex-direction: column;
+  }
+}
